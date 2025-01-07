@@ -2,11 +2,8 @@
 The Simple Shell is a lightweight command-line interpreter designed to mimic the basic functionality of a Unix shell. Its primary purpose is to parse and execute user commands by interfacing with the operating system. It supports executing external programs, handling arguments, managing simple I/O redirection, and enabling basic shell features like command history and process management.
 
 ## Limitations
-1. **Minimal Feature Set**: Lacks advanced features like scripting, pipelines, environment variable management, and complex redirection.
-2. **Concurrency**: Limited to basic process management; does not support advanced job control (e.g., background/foreground processes).
-3. **Security**: Does not sanitize input robustly, making it unsuitable for production use.
-4. **Extensibility**: Adding new features may require significant restructuring due to the simplistic architecture.
-5. **Portability**: Designed for Unix-like systems; may not work on other operating systems without modifications.
+1. **Basic Features Only**: The shell includes only the bare essentials— no support for scripting, environment variable management, etc.
+2. **Limited Concurrency**: It can handle simple process management but lacks advanced job control, like running tasks in the background or toggling between foreground and background processes.
 
 ## Design Overview
 The Simple Shell consists of three primary components:
@@ -21,6 +18,7 @@ The Simple Shell consists of three primary components:
 
 3. **I/O Manager**:
    - Handles basic redirection (e.g., `>` for output, `<` for input).
+   - Supports pipelines (e.g., `|`) for chaining commands.
    - Uses file descriptors to reroute standard input/output streams.
 
 ## Key Features
@@ -58,12 +56,7 @@ The Simple Shell consists of three primary components:
 
 ## Potential Enhancements
 1. **Environment Variables**: Add support for managing and utilizing environment variables.
-2. **Pipelines**: Enable chaining commands using `|`.
-3. **Built-in Commands**: Implement commands like `cd`, `exit`, and `history` natively.
-4. **Job Control**: Introduce background and foreground process management.
-5. **Tab Completion**: Provide user-friendly features like tab completion for commands and file paths.
-6. **Improved Parsing**: Enhance the parser to handle more complex input scenarios.
+2. **Tab Completion**: Provide user-friendly features like tab completion for commands and file paths.
+3. **Improved Parsing**: Enhance the parser to handle more complex input scenarios.
 
-## Conclusion
-The Simple Shell is a foundational tool for understanding shell internals and system programming. While it provides essential functionality, its limitations make it a starting point for further development rather than a fully-fledged replacement for modern shells.
 
