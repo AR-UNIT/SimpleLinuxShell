@@ -1,9 +1,10 @@
 ## What is it?
-The Simple Shell is a lightweight command-line interpreter designed to mimic the basic functionality of a Unix shell. Its primary purpose is to parse and execute user commands by interfacing with the operating system. It supports executing external programs, handling arguments, managing simple I/O redirection, and enabling basic shell features like command history and process management.
+The Simple Shell is a lightweight command-line interpreter designed to mimic the basic functionality of a Unix shell. Its primary purpose is to parse and execute user commands by interfacing with the operating system via system calls. It supports executing external programs, handling arguments, managing simple I/O redirection, and piping commands
 
 ## Limitations
 1. **Basic Features Only**: The shell includes only the bare essentials— no support for scripting, environment variable management, etc.
 2. **Limited Concurrency**: It can handle simple process management but lacks advanced job control, like running tasks in the background or toggling between foreground and background processes.
+3. **No command history**: There is no memory/storage of previously executed commands.
 
 ## Design Overview
 The Simple Shell consists of three primary components:
@@ -58,5 +59,6 @@ The Simple Shell consists of three primary components:
 1. **Environment Variables**: Add support for managing and utilizing environment variables.
 2. **Tab Completion**: Provide user-friendly features like tab completion for commands and file paths.
 3. **Improved Parsing**: Enhance the parser to handle more complex input scenarios.
+4. **Command History**: Maintain memory of previously executed commands for better user experience.
 
 
